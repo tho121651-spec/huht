@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { daysOfWeek, sessions, semesterData } from '../data/Studying/scheduleData';
+import { daysOfWeek, sessions, semesterData } from '../data/Studying/ScheduleData.js';
 
 // Import trực tiếp file ảnh từ thư mục src/icon/teach_inclass.png
 import teachIcon from '../icon/teach_inclass.png';
@@ -185,7 +185,6 @@ export default function Schedule() {
                           <div key={idx} style={{ textAlign: 'center' }}>
                             <div style={{ fontWeight: 'bold' }}>{course.code}</div>
                             <div>{course.detail}</div>
-                            {/* Sử dụng biến teachIcon đã import từ src/icon/teach_inclass.png */}
                             <img 
                               src={teachIcon} 
                               alt="teach in class" 
@@ -258,9 +257,9 @@ export default function Schedule() {
                           return (
                             <div key={idx} className="course-card">
                               <div className="course-name-detailed">{fullName}</div>
-                              <div className="course-info-line">- Tiết: {tiet}</div>
-                              <div className="course-info-line">- Phòng: {phong}</div>
-                              <div className="course-info-line">- Giáo viên: {teacherName}</div>
+                              <div className="course-info-line">Tiết: {tiet}</div>
+                              <div className="course-info-line">Phòng: {phong}</div>
+                              <div className="course-info-line">Giáo viên: {teacherName}</div>
                             </div>
                           );
                         })}
