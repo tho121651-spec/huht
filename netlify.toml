@@ -1,3 +1,34 @@
 [build]
   command = "chmod +x node_modules/.bin/* && npm run build"
   publish = "dist"
+
+# 1. Truy cập root domain sẽ tự động chuyển vào trang tin tức
+[[redirects]]
+  from = "/"
+  to = "/student/News"
+  status = 301
+  force = true
+
+# 2. Ánh xạ các tệp bundle JS/CSS từ /student/assets/ về thư mục /assets/
+[[redirects]]
+  from = "/student/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+# 3. Ánh xạ thư mục hình ảnh tĩnh
+[[redirects]]
+  from = "/student/images/*"
+  to = "/images/:splat"
+  status = 200
+
+# 4. Điều hướng toàn bộ SPA React Router về index.html
+[[redirects]]
+  from = "/student/*"
+  to = "/index.html"
+  status = 200
+
+# 5. Dự phòng cho các URL khác
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
