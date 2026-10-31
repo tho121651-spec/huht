@@ -1,0 +1,232 @@
+/* Styling tổng thể Portal */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f5f5f5;
+    font-size: 13px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.portal-container {
+    padding: 0 15px;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.font-space {
+    margin-left: 15px;
+}
+
+/* Title Header */
+.hitec-title {
+    background-color: #1a4d80;
+    color: #ffffff;
+    padding: 10px 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.hitec-title h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 28px;
+}
+
+.header-date {
+    color: #cecece;
+    line-height: 28px;
+}
+
+.header-info-bar {
+    line-height: 23px;
+    font-size: 13px;
+    margin-bottom: 8px;
+    margin-top: 4px;
+}
+
+.link-setting {
+    font-weight: bold;
+    color: #ce2020;
+    text-decoration: none;
+}
+
+.link-setting:hover {
+    color: #ce2020;
+    text-decoration: underline;
+}
+
+/* Navbar */
+.hitec-navbar {
+    background-color: #2b6ca3;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 5px;
+    margin-left: -15px;
+    margin-right: -15px;
+    min-height: 40px;
+}
+
+.hitec-navbar .navbar-nav > li > a {
+    color: #ffffff;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.hitec-navbar .navbar-nav > li > a:hover,
+.hitec-navbar .navbar-nav > li > a:focus {
+    background-color: #1a4d80 !important;
+    color: #ffffff !important;
+}
+
+/* Layout Wrapper */
+#wrapper {
+    margin-top: 5px;
+    display: flex;
+    gap: 15px;
+}
+
+.panel-sidebar-left {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.panel-main-content {
+    flex-grow: 1;
+    background: #ffffff;
+    padding: 15px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    min-height: 550px;
+}
+
+/* Sidebar Modules */
+.hitec-information, 
+.hitec-general-function, 
+.hitec-notification {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.hitec-sidebar h5 {
+    font-weight: bold;
+    color: #1a4d80;
+    border-bottom: 2px solid #2b6ca3;
+    padding-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.hitec-sidebar p {
+    margin-bottom: 6px;
+    font-size: 12px;
+}
+
+.hitec-sidebar a {
+    color: #333;
+    text-decoration: none;
+}
+
+.hitec-sidebar a:hover {
+    color: #ce2020;
+    text-decoration: underline;
+}
+
+.hitec-notification ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.hitec-notification li {
+    border-bottom: 1px dashed #e0e0e0;
+    padding: 6px 0;
+}
+
+.hitec-notification li a {
+    display: block;
+    font-size: 12px;
+}
+
+/* Main Content Area */
+.hitec-content h2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #1a4d80;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.btn-top-space {
+    margin-bottom: 8px;
+}
+
+.alert-space {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.table-cell-title {
+    background-color: #f0f4f8;
+    color: #1a4d80;
+}
+
+.table > thead > tr > th {
+    background-color: #2b6ca3;
+    color: #ffffff;
+    vertical-align: middle;
+    border-bottom: none;
+    font-size: 12px;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-tabs > li > a {
+    color: #333;
+    border-radius: 4px 4px 0 0;
+}
+
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover {
+    font-weight: bold;
+    color: #1a4d80;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+
+.tab-content {
+    margin-top: -1px;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #wrapper {
+        flex-direction: column;
+    }
+    .panel-sidebar-left {
+        width: 100%;
+    }
+}

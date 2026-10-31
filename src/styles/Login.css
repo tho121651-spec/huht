@@ -1,0 +1,162 @@
+/* Container bao phủ toàn màn hình */
+.login-body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(to bottom, #7dbbe6 0%, #408ec8 50%, #1e62a1 100%);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Khối hitec-signin chứa 2 cột */
+.hitec-signin {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-height: calc(100vh - 120px);
+}
+
+/* Cột trái chứa Logo & Ảnh trường */
+.hitec-col-image {
+  flex: 1;
+  text-align: center;
+  padding-right: 30px;
+}
+
+.hitec-signin-logo {
+  margin-bottom: 20px;
+}
+
+.hitec-signin-logo img {
+  max-height: 110px;
+  width: auto;
+}
+
+.hitec-signin-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Cột phải chứa Form */
+.hitec-col-signin {
+  width: 330px;
+  margin-right: 50px;
+  position: relative;
+}
+
+/* Style cho Form Đăng nhập */
+.hitec-form-signin {
+  background-color: #ffffff;
+  padding: 30px 25px;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Badge icon góc trên bên phải */
+.hitec-form-signin > img {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-signin-heading {
+  color: #286090;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.hitec-form-signin .form-group {
+  margin-bottom: 15px;
+}
+
+.hitec-form-signin label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.hitec-form-signin .form-control.input-lg {
+  height: 40px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.hitec-form-signin .form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.btn-custom {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  height: 42px;
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-custom:hover {
+  background-color: #286090;
+  border-color: #204d74;
+}
+
+/* Footer chuẩn gốc - Màu chữ trắng 100% */
+footer {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  padding: 10px 0;
+  color: #ffffff !important;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+  z-index: 10;
+}
+
+footer p {
+  margin: 0;
+  color: #ffffff !important;
+}
+
+footer a,
+footer a:hover,
+footer a:focus,
+footer a:visited {
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+footer .glyphicon {
+  color: #ffffff !important;
+  margin-right: 4px;
+}
+
+.nopadding {
+  padding: 0;
+}
