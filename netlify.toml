@@ -9,27 +9,22 @@
   status = 301
   force = true
 
-# 2. Ánh xạ toàn bộ thư mục bundle assets
+# 2. Ánh xạ thư mục ảnh login (QUAN TRỌNG: Phải đặt trước /student/*)
+[[redirects]]
+  from = "/student/login/*"
+  to = "/login/:splat"
+  status = 200
+
+# 3. Ánh xạ toàn bộ thư mục bundle assets
 [[redirects]]
   from = "/student/assets/*"
   to = "/assets/:splat"
   status = 200
 
-# 3. Ánh xạ ảnh nằm trong public/images/
+# 4. Ánh xạ ảnh nằm trong public/images/
 [[redirects]]
   from = "/student/images/*"
   to = "/images/:splat"
-  status = 200
-
-# 4. Ánh xạ nếu file ảnh để trực tiếp ngoài public/
-[[redirects]]
-  from = "/student/*.png"
-  to = "/:splat.png"
-  status = 200
-
-[[redirects]]
-  from = "/student/*.jpg"
-  to = "/:splat.jpg"
   status = 200
 
 # 5. Điều hướng SPA React Router
