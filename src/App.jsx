@@ -13,9 +13,9 @@ import Footer from './components/Footer.jsx'
 import Login from './pages/Login.jsx'
 import StudentPortal from './pages/StudentPortal.jsx'
 import NewsDetail from './pages/NewsDetail.jsx'
-import Schedule from './pages/Schedule.jsx' // Sử dụng chung 1 file Schedule cho lịch học
+import Schedule from './pages/Schedule.jsx'
 
-// Đã cập nhật đường dẫn đúng theo cấu trúc thư mục src/data/Studying/
+// Import trang Đăng ký học phần
 import RegisterModules from './data/Studying/RegisterModules.jsx'
 
 // Import trang Danh sách lớp đã đăng ký
@@ -26,12 +26,15 @@ import TrainingProgram from './pages/TrainingProgram.jsx'
 
 // Import trang Kết quả rèn luyện
 import Conduct from './pages/Conduct.jsx'
+
 // Import trang Khảo sát hoạt động giảng dạy
 import Survey from './pages/Survey.jsx'
-import ExamSchedule from './pages/ExamSchedule.jsx';
-// 1. Import trang Kết quả học tập
-import StudyResults from './pages/StudyResults.jsx';
 
+// Import trang Lịch thi
+import ExamSchedule from './pages/ExamSchedule.jsx'
+
+// Import trang Kết quả học tập
+import StudyResults from './pages/StudyResults.jsx'
 
 // Layout dùng chung cho các trang sau khi đăng nhập
 function MainLayout() {
@@ -40,15 +43,17 @@ function MainLayout() {
       <div className="container-fluid">
         <Header />
         <Navbar />
-        <StatusBar />
       </div>
 
       <div className="container-fluid" id="wrapper">
+        {/* CỘT TRÁI: Menu & Thông tin sinh viên */}
         <div className="panel-sidebar-left">
           <Sidebar />
         </div>
 
+        {/* CỘT PHẢI: Chứa StatusBar (dòng chữ đỏ góc trên) và Nội dung */}
         <div className="panel-main-content">
+          <StatusBar />
           <div className="hitec-content">
             <div className="row">
               <div className="col-xs-12">
@@ -122,6 +127,7 @@ function AppRoutes() {
         {/* Route cho Khảo sát hoạt động giảng dạy */}
         <Route path="/Survey" element={<Survey />} />
 
+        {/* Route cho Lịch thi */}
         <Route path="/Studying/ScheduleOfExam" element={<ExamSchedule />} />
 
         {/* Route cho Kết quả học tập */}

@@ -539,7 +539,7 @@ footer p {
   margin: 0 0 3px;
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- Responsive cho Mobile ---------- */
 @media (max-width: 767px) {
   .navbar-toggle {
     display: block;
@@ -595,30 +595,60 @@ footer p {
     text-decoration: underline;
   }
 
+  /* GIỮ NGUYÊN 2 CỘT SONG SONG TRÊN MOBILE THAY VÌ BẺ DỌC 100% */
+  #wrapper {
+    padding: 4px 6px 10px;
+  }
+
   .panel-sidebar-left {
-    float: none;
-    width: 100%;
+    float: left;
+    width: 32% !important;
+    padding: 0 6px 0 0;
   }
 
   .panel-main-content {
-    float: none;
-    width: 100%;
+    float: left;
+    width: 68% !important;
     margin: 0;
   }
 
-  .hitec-title .col-xs-8,
-  .hitec-title .col-xs-4 {
-    float: none;
+  .hitec-content {
+    padding: 6px 8px 12px;
+  }
+
+  /* Ẩn ngày tháng trên Mobile để thanh đen chỉ có 1 dòng gọn gàng */
+  .hitec-title .col-xs-4,
+  .hitec-title .text-right {
+    display: none !important;
+  }
+
+  .hitec-title .col-xs-8 {
+    float: left;
     width: 100%;
-    text-align: left;
   }
 
   .hitec-title h1 {
-    padding-left: 10px;
+    font-size: 15px;
+    padding-left: 8px;
   }
 
-  .hitec-title .text-right {
-    padding-left: 10px;
+  /* Dòng thông tin đỏ trên mobile */
+  .hitec-status {
+    padding: 2px 4px 2px 0;
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hitec-sidebar h5 {
+    font-size: 11.5px;
+    margin: 10px 0 5px;
+  }
+
+  .hitec-sidebar p,
+  .hitec-notification li {
+    font-size: 11px;
   }
 }
 
