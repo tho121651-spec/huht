@@ -57,7 +57,7 @@ export default function Login() {
         <div className="hitec-col-signin">
           <form onSubmit={handleSubmit} className="hitec-form-signin">
             <img src={`${baseUrl}login/student_office_badge.png`} alt="Badge" />
-            <h2 className="form-signin-heading">{loginConfig.title}</h2>
+            <h2 className="form-signin-heading">{loginConfig?.title || 'SINH VIÊN'}</h2>
 
             {error && (
               <div className="form-group">
@@ -67,7 +67,7 @@ export default function Login() {
               </div>
             )}
 
-            {loginConfig.fields.map((field) => (
+            {loginConfig?.fields?.map((field) => (
               <div className="form-group" key={field.id}>
                 <label htmlFor={field.id}>{field.label}</label>
                 <input
@@ -90,22 +90,26 @@ export default function Login() {
         </div>
       </div>
 
-      {/* Footer */}
+      {/* Footer hiển thị chuẩn cả icon SVG và text */}
       <footer>
-        <div className="row">
-          <div className="col-xs-12 text-center nopadding">
-            <p>
-              <a href="http://huht.hueuni.edu.vn" style={{ color: '#fff' }} target="_blank" rel="noreferrer">
-                {loginConfig.footer.schoolName}
-              </a>
-            </p>
-            <p>
-              <span className="glyphicon glyphicon-home"></span> {loginConfig.footer.address}
-            </p>
-            <p>
-              <span className="glyphicon glyphicon-phone"></span> {loginConfig.footer.contact}
-            </p>
-          </div>
+        <div className="footer-container">
+          <p className="footer-title">
+            <a href="http://huht.hueuni.edu.vn" target="_blank" rel="noreferrer">
+              {loginConfig?.footer?.schoolName || 'Trường Du lịch, Đại học Huế'}
+            </a>
+          </p>
+          <p className="footer-info">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="#ffffff" style={{ verticalAlign: '-2px', marginRight: '5px' }}>
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            {loginConfig?.footer?.address || '22 Lâm Hoằng, Thành phố Huế'}
+          </p>
+          <p className="footer-info">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="#ffffff" style={{ verticalAlign: '-2px', marginRight: '5px' }}>
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+            </svg>
+            {loginConfig?.footer?.contact || 'Điện thoại: 0234.3897755 - Fax: 0234.3897744'}
+          </p>
         </div>
       </footer>
     </div>

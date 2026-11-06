@@ -1,4 +1,4 @@
-/* Container bao phủ toàn màn hình */
+/* ================= CẤU TRÚC CHUNG (DESKTOP & BASE) ================= */
 .login-body {
   margin: 0;
   padding: 0;
@@ -7,9 +7,12 @@
   background: linear-gradient(to bottom, #7dbbe6 0%, #408ec8 50%, #1e62a1 100%);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Khối hitec-signin chứa 2 cột trên Desktop */
+/* Khối chứa 2 cột */
 .hitec-signin {
   width: 100%;
   max-width: 1140px;
@@ -19,10 +22,10 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  min-height: calc(100vh - 120px);
+  flex: 1;
 }
 
-/* Cột trái chứa Logo & Ảnh trường */
+/* Cột trái (Logo + Ảnh trường trên Desktop) */
 .hitec-col-image {
   flex: 1;
   text-align: center;
@@ -36,6 +39,7 @@
 .hitec-signin-logo img {
   max-height: 110px;
   width: auto;
+  display: inline-block;
 }
 
 .hitec-signin-image img {
@@ -43,14 +47,14 @@
   height: auto;
 }
 
-/* Cột phải chứa Form */
+/* Cột phải (Form đăng nhập trên Desktop) */
 .hitec-col-signin {
-  width: 330px;
-  margin-right: 50px;
+  width: 350px;
+  margin-right: 60px;
   position: relative;
 }
 
-/* Style cho Form Đăng nhập */
+/* Khung Form màu trắng */
 .hitec-form-signin {
   background-color: #ffffff;
   padding: 30px 25px;
@@ -59,17 +63,18 @@
   position: relative;
 }
 
-/* Badge icon góc trên bên phải */
+/* Huy hiệu tròn góc trên bên phải */
 .hitec-form-signin > img {
   position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 48px;
-  height: 48px;
-  background: #fff;
+  top: -22px;
+  right: -15px;
+  width: 52px;
+  height: 52px;
+  background: #ffffff;
   border-radius: 50%;
   padding: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 5;
 }
 
 .form-signin-heading {
@@ -78,6 +83,7 @@
   font-weight: bold;
   margin-top: 0;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .hitec-form-signin .form-group {
@@ -87,38 +93,40 @@
 .hitec-form-signin label {
   font-size: 13px;
   font-weight: bold;
-  color: #333;
-  margin-bottom: 5px;
+  color: #333333;
+  margin-bottom: 6px;
   display: block;
 }
 
 .hitec-form-signin .form-control.input-lg {
-  height: 40px;
+  height: 42px;
   padding: 8px 12px;
   font-size: 14px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 3px;
   width: 100%;
   box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .hitec-form-signin .form-control:focus {
   border-color: #66afe9;
-  outline: 0;
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
 .btn-custom {
   background-color: #337ab7;
-  border-color: #2e6da4;
-  color: #fff;
+  border: 1px solid #2e6da4;
+  color: #ffffff;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15px;
   height: 42px;
   margin-top: 15px;
   width: 100%;
   border-radius: 3px;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .btn-custom:hover {
@@ -126,70 +134,59 @@
   border-color: #204d74;
 }
 
-/* Footer chuẩn gốc - Desktop */
+/* Footer hiển thị chữ trắng rõ nét */
 footer {
-  position: absolute;
-  bottom: 15px;
   width: 100%;
-  padding: 10px 0;
+  padding: 15px 0 20px;
   color: #ffffff !important;
-  font-size: 13px;
-  line-height: 1.6;
   text-align: center;
   z-index: 10;
 }
 
 footer p {
-  margin: 0;
+  margin: 3px 0;
   color: #ffffff !important;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
-footer a,
-footer a:hover,
-footer a:focus,
-footer a:visited {
+footer a {
   color: #ffffff !important;
   text-decoration: none;
+  font-weight: 500;
 }
 
-footer .glyphicon {
-  color: #ffffff !important;
-  margin-right: 4px;
+footer a:hover {
+  text-decoration: underline;
 }
 
-.nopadding {
-  padding: 0;
-}
-
-/* ================= ĐỊNH DẠNG RESPONSIVE CHO MOBILE (< 768px) ================= */
+/* ================= ĐỊNH DẠNG CHUẨN CHO MOBILE (< 768px) ================= */
 @media (max-width: 768px) {
   .login-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 100vh;
-    padding: 25px 15px 20px;
+    padding: 30px 16px 20px;
     box-sizing: border-box;
+    min-height: 100vh;
+    justify-content: flex-start;
   }
 
-  /* Đổi layout 2 cột thành 1 cột dọc và bỏ căn giữa cứng */
+  /* Đổi layout 2 cột thành 1 cột dọc */
   .hitec-signin {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    min-height: auto;
-    padding-top: 10px;
+    justify-content: flex-start;
+    padding-top: 0;
     margin: 0 auto;
-  }
-
-  /* Cột Logo căn giữa */
-  .hitec-col-image {
     width: 100%;
     flex: none;
+  }
+
+  /* Căn giữa Logo trường */
+  .hitec-col-image {
+    width: 100%;
     padding-right: 0;
     margin-bottom: 25px;
     text-align: center;
+    flex: none;
   }
 
   .hitec-signin-logo {
@@ -197,49 +194,65 @@ footer .glyphicon {
   }
 
   .hitec-signin-logo img {
-    max-height: 100px;
+    max-height: 110px;
     width: auto;
     display: inline-block;
   }
 
-  /* ẨN HOÀN TOÀN ẢNH TÒA NHÀ TRÊN MOBILE */
+  /* ẨN ẢNH TÒA NHÀ TRÊN MOBILE THEO ĐÚNG MẪU GỐC */
   .hitec-signin-image {
     display: none !important;
   }
 
-  /* Form co giãn vừa vặn khung hình điện thoại */
+  /* Mở rộng form vừa khít tỉ lệ màn hình điện thoại (không bị hẹp) */
   .hitec-col-signin {
     width: 100%;
-    max-width: 360px;
+    max-width: 440px;
     margin: 0 auto;
-    padding: 0 8px;
+    padding: 0 4px;
     box-sizing: border-box;
   }
 
   .hitec-form-signin {
     width: 100%;
-    padding: 30px 22px 25px;
+    padding: 32px 22px 26px;
     border-radius: 4px;
-    position: relative;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.22);
     box-sizing: border-box;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
   }
 
-  /* Huy hiệu góc trên form trên mobile */
+  /* Căn lại vị trí huy hiệu tròn góc trên */
   .hitec-form-signin > img {
-    top: -22px;
+    top: -24px;
     right: -10px;
-    width: 54px;
-    height: 54px;
+    width: 56px;
+    height: 56px;
   }
 
-  /* Footer chuyển về relative để không bị đè lên form */
+  .form-signin-heading {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .hitec-form-signin .form-control.input-lg {
+    height: 42px;
+    font-size: 15px;
+  }
+
+  .btn-custom {
+    height: 44px;
+    font-size: 15px;
+    margin-top: 18px;
+  }
+
+  /* Chân trang trên mobile */
   footer {
-    position: relative;
-    bottom: auto;
     margin-top: 35px;
-    padding: 10px 0;
-    font-size: 11.5px;
-    line-height: 1.6;
+    padding: 10px 0 15px;
+  }
+
+  footer p {
+    font-size: 12px;
+    margin: 2px 0;
   }
 }
