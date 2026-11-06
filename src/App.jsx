@@ -37,12 +37,15 @@ import ExamSchedule from './pages/ExamSchedule.jsx'
 import StudyResults from './pages/StudyResults.jsx'
 
 // Layout dùng chung cho các trang sau khi đăng nhập
+// Layout dùng chung cho các trang sau khi đăng nhập
 function MainLayout() {
   return (
     <>
       <div className="container-fluid">
         <Header />
         <Navbar />
+        {/* Đưa StatusBar ra đây: Nằm trên nền xám, phía trên 2 cột */}
+        <StatusBar />
       </div>
 
       <div className="container-fluid" id="wrapper">
@@ -51,9 +54,8 @@ function MainLayout() {
           <Sidebar />
         </div>
 
-        {/* CỘT PHẢI: Chứa StatusBar (dòng chữ đỏ góc trên) và Nội dung */}
+        {/* CỘT PHẢI: Khung trắng bắt đầu trực tiếp bằng THÔNG BÁO */}
         <div className="panel-main-content">
-          <StatusBar />
           <div className="hitec-content">
             <div className="row">
               <div className="col-xs-12">
@@ -68,7 +70,6 @@ function MainLayout() {
     </>
   )
 }
-
 // Component xử lý Route Logout
 function Logout() {
   const { logout } = useAuth()

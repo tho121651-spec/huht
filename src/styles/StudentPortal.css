@@ -316,24 +316,37 @@ small {
 /* ---------- Dòng khóa / ngành / học kỳ ---------- */
 .hitec-status {
   margin-top: 0 !important;
-  padding: 4px 15px 4px 0;
-  font-size: 12px;
-  line-height: 22px;
+  margin-bottom: 2px;
+  padding: 3px 10px 3px 0 !important;
+  font-size: 11.5px;
+  line-height: 20px;
   width: 100%;
+  text-align: right !important; /* Căn sát lề phải */
+  color: #ce2020 !important;    /* Màu chữ đỏ chuẩn */
+  font-weight: bold;
+  white-space: nowrap;          /* Giữ trên 1 hàng, không cho rớt dòng */
+  overflow: hidden;
+  text-overflow: ellipsis;      /* Tự động thu gọn dấu ... nếu màn hình hẹp */
+  box-sizing: border-box;
+}
+
+.hitec-status a {
+  color: #ce2020 !important;
+  text-decoration: none;
 }
 
 .hitec-status a:hover,
 .hitec-status a:focus {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .glyphicon-svg {
-  width: 13px;
-  height: 13px;
+  width: 12px;
+  height: 12px;
   fill: currentColor;
   vertical-align: -2px;
+  margin-right: 3px;
 }
-
 /* ---------- Bố cục 2 cột chính ---------- */
 #wrapper {
   padding: 6px 15px 10px; /* Thu gọn padding trên để kéo nội dung sát lên nữa */
