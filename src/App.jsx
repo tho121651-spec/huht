@@ -38,28 +38,30 @@ import StudyResults from './pages/StudyResults.jsx'
 
 // Layout dùng chung cho các trang sau khi đăng nhập
 // Layout dùng chung cho các trang sau khi đăng nhập
+// Layout dùng chung cho các trang sau khi đăng nhập
 function MainLayout() {
   return (
     <>
       <div className="container-fluid">
         <Header />
         <Navbar />
-        {/* Đưa StatusBar ra đây: Nằm trên nền xám, phía trên 2 cột */}
-        <StatusBar />
       </div>
 
       <div className="container-fluid" id="wrapper">
-        {/* CỘT TRÁI: Menu & Thông tin sinh viên */}
+        {/* CỘT TRÁI (~32%) */}
         <div className="panel-sidebar-left">
           <Sidebar />
         </div>
 
-        {/* CỘT PHẢI: Khung trắng bắt đầu trực tiếp bằng THÔNG BÁO */}
-        <div className="panel-main-content">
-          <div className="hitec-content">
-            <div className="row">
-              <div className="col-xs-12">
-                <Outlet />
+        {/* CỘT PHẢI (~68%): Chứa dòng chữ đỏ và khung nội dung trắng */}
+        <div className="panel-main-col">
+          <StatusBar />
+          <div className="panel-main-content">
+            <div className="hitec-content">
+              <div className="row">
+                <div className="col-xs-12">
+                  <Outlet />
+                </div>
               </div>
             </div>
           </div>

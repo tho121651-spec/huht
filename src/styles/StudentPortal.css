@@ -349,7 +349,7 @@ small {
 }
 /* ---------- Bố cục 2 cột chính ---------- */
 #wrapper {
-  padding: 6px 15px 10px; /* Thu gọn padding trên để kéo nội dung sát lên nữa */
+  padding: 6px 15px 10px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -360,9 +360,16 @@ small {
   padding: 0 10px 0 0;
 }
 
-.panel-main-content {
+/* Cột bao bọc toàn bộ bên phải (chứa StatusBar + Nội dung) */
+.panel-main-col {
   float: left;
   width: calc(100% - 256px);
+  margin: 0;
+}
+
+/* Khung viền trắng chỉ bọc riêng phần nội dung */
+.panel-main-content {
+  width: 100%;
   margin: 0;
   background-color: #fff;
   border: 1px solid #d9d9d9;
@@ -371,7 +378,6 @@ small {
 .hitec-content {
   padding: 10px 12px 15px;
 }
-
 /* ---------- Cột trái ---------- */
 .hitec-sidebar {
   padding-top: 0;
