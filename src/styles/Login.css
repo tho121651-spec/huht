@@ -9,7 +9,7 @@
   overflow-x: hidden;
 }
 
-/* Khối hitec-signin chứa 2 cột */
+/* Khối hitec-signin chứa 2 cột trên Desktop */
 .hitec-signin {
   width: 100%;
   max-width: 1140px;
@@ -126,7 +126,7 @@
   border-color: #204d74;
 }
 
-/* Footer chuẩn gốc - Màu chữ trắng 100% */
+/* Footer chuẩn gốc - Desktop */
 footer {
   position: absolute;
   bottom: 15px;
@@ -159,4 +159,87 @@ footer .glyphicon {
 
 .nopadding {
   padding: 0;
+}
+
+/* ================= ĐỊNH DẠNG RESPONSIVE CHO MOBILE (< 768px) ================= */
+@media (max-width: 768px) {
+  .login-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 25px 15px 20px;
+    box-sizing: border-box;
+  }
+
+  /* Đổi layout 2 cột thành 1 cột dọc và bỏ căn giữa cứng */
+  .hitec-signin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: auto;
+    padding-top: 10px;
+    margin: 0 auto;
+  }
+
+  /* Cột Logo căn giữa */
+  .hitec-col-image {
+    width: 100%;
+    flex: none;
+    padding-right: 0;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .hitec-signin-logo {
+    margin-bottom: 0;
+  }
+
+  .hitec-signin-logo img {
+    max-height: 100px;
+    width: auto;
+    display: inline-block;
+  }
+
+  /* ẨN HOÀN TOÀN ẢNH TÒA NHÀ TRÊN MOBILE */
+  .hitec-signin-image {
+    display: none !important;
+  }
+
+  /* Form co giãn vừa vặn khung hình điện thoại */
+  .hitec-col-signin {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  .hitec-form-signin {
+    width: 100%;
+    padding: 30px 22px 25px;
+    border-radius: 4px;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Huy hiệu góc trên form trên mobile */
+  .hitec-form-signin > img {
+    top: -22px;
+    right: -10px;
+    width: 54px;
+    height: 54px;
+  }
+
+  /* Footer chuyển về relative để không bị đè lên form */
+  footer {
+    position: relative;
+    bottom: auto;
+    margin-top: 35px;
+    padding: 10px 0;
+    font-size: 11.5px;
+    line-height: 1.6;
+  }
 }
